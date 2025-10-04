@@ -5,7 +5,7 @@ Follow `docs/parsing.md` for tooling, OCR, and cleanup guidance. Check off each 
 ## PDF Checklist
 
 - [x] docs/pdf/protocol_vmb1bl.pdf
-- [ ] docs/pdf/protocol_vmb1bls.pdf
+- [x] docs/pdf/protocol_vmb1bls.pdf
 - [ ] docs/pdf/protocol_vmb1dm.pdf
 - [ ] docs/pdf/protocol_vmb1led.pdf
 - [ ] docs/pdf/protocol_vmb1rs.pdf

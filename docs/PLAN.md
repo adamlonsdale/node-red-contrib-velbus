@@ -9,7 +9,7 @@ Follow `docs/parsing.md` for tooling, OCR, and cleanup guidance. Check off each 
 - [x] docs/pdf/protocol_vmb1dm.pdf
 - [x] docs/pdf/protocol_vmb1led.pdf
 - [x] docs/pdf/protocol_vmb1rs.pdf
-- [ ] docs/pdf/protocol_vmb1ry.pdf
+- [x] docs/pdf/protocol_vmb1ry.pdf
 - [ ] docs/pdf/protocol_vmb1ryno.pdf
 - [ ] docs/pdf/protocol_vmb1rynos.pdf
 - [ ] docs/pdf/protocol_vmb1rys.pdf

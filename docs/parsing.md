@@ -30,6 +30,11 @@ done
 ```
 Each page now has a matching `.txt` file containing the raw OCR output.
 
+> **Note**: The PNG files can be deleted after OCR is complete to save space:
+> ```bash
+> rm docs/pdf/<protocol>_page_*.png
+> ```
+
 ## 4. Consolidate OCR Output
 Combine the per-page text files into a single working file to make downstream parsing easier:
 ```bash
@@ -115,10 +120,17 @@ Within each section, capture:
 - Re-run targeted OCR on problematic regions if anything remains unclear.
 - Optionally share the Markdown for peer review or import it into Node-RED documentation.
 
-## 8. Clean Up (Optional)
-If storage is a concern, delete intermediate PNG/TXT files after the Markdown is finished:
+## 8. Clean Up
+After the Markdown reference is complete, delete all intermediate files to keep the repository clean:
 ```bash
-rm docs/pdf/<protocol>_page_*.png docs/pdf/<protocol>_page_*.txt
+# Delete OCR text files
+rm docs/pdf/<protocol>_page_*.txt
+rm docs/pdf/<protocol>_ocr.txt
+
+# Delete any remaining PNG files (if not already deleted in step 3)
+rm docs/pdf/<protocol>_page_*.png
 ```
+
+> **Important**: These generated files (`.png`, `.txt`) should not be committed to version control. A `.gitignore` file in the `docs` folder prevents accidental commits.
 
 Following this workflow ensures each Velbus protocol document is transformed into a searchable, well-structured Markdown reference covering all commands, IDs, settings, and behavioural rules.

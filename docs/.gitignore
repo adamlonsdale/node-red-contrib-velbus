@@ -1,0 +1,5 @@
+# Ignore generated PNG images from PDF conversion
+*.png
+
+# Ignore generated OCR text files
+*.txt

@@ -14,12 +14,12 @@ Follow `docs/parsing.md` for tooling, OCR, and cleanup guidance. Check off each 
 - [x] docs/pdf/protocol_vmb1rynos.pdf
 - [x] docs/pdf/protocol_vmb1rys.pdf
 - [x] docs/pdf/protocol_vmb1tc.pdf
-- [ ] docs/pdf/protocol_vmb1tcw.pdf
-- [ ] docs/pdf/protocol_vmb1ts.pdf
-- [ ] docs/pdf/protocol_vmb1tsw.pdf
-- [ ] docs/pdf/protocol_vmb1usb.pdf
-- [ ] docs/pdf/protocol_vmb2bl.pdf
-- [ ] docs/pdf/protocol_vmb2ble.pdf
+- [x] docs/pdf/protocol_vmb1tcw.pdf
+- [x] docs/pdf/protocol_vmb1ts.pdf
+- [x] docs/pdf/protocol_vmb1tsw.pdf
+- [x] docs/pdf/protocol_vmb1usb.pdf
+- [x] docs/pdf/protocol_vmb2bl.pdf
+- [x] docs/pdf/protocol_vmb2ble.pdf
 - [ ] docs/pdf/protocol_vmb2ble_10.pdf
 - [ ] docs/pdf/protocol_vmb2ble_20.pdf
 - [ ] docs/pdf/protocol_vmb2dc_20.pdf

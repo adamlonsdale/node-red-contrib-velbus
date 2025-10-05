@@ -20,9 +20,9 @@ Follow `docs/parsing.md` for tooling, OCR, and cleanup guidance. Check off each 
 - [x] docs/pdf/protocol_vmb1usb.pdf
 - [x] docs/pdf/protocol_vmb2bl.pdf
 - [x] docs/pdf/protocol_vmb2ble.pdf
-- [ ] docs/pdf/protocol_vmb2ble_10.pdf
-- [ ] docs/pdf/protocol_vmb2ble_20.pdf
-- [ ] docs/pdf/protocol_vmb2dc_20.pdf
+- [x] docs/pdf/protocol_vmb2ble_10.pdf
+- [x] docs/pdf/protocol_vmb2ble_20.pdf
+- [x] docs/pdf/protocol_vmb2dc_20.pdf
 - [ ] docs/pdf/protocol_vmb2pbn.pdf
 - [ ] docs/pdf/protocol_vmb4an.pdf
 - [ ] docs/pdf/protocol_vmb4dc.pdf

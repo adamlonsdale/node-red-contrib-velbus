@@ -3,9 +3,9 @@
 Follow `docs/parsing.md` for tooling, OCR, and cleanup guidance. Check off each PDF as its Markdown reference is completed.
 
 ## Current Batch
-- [x] docs/pdf/protocol_vmb4ry.pdf — structured summary committed
-- [x] docs/pdf/protocol_vmb4ryld.pdf — structured summary committed
-- [x] docs/pdf/protocol_vmb4ryld_10.pdf — structured summary committed
+- [x] docs/pdf/protocol_vmb4ryld_20_vmb4ryno_20.pdf — structured summary committed
+- [x] docs/pdf/protocol_vmb4ryno.pdf — structured summary committed
+- [x] docs/pdf/protocol_vmb4ryno_10.pdf — structured summary committed
 
 ## PDF Checklist
 
@@ -40,9 +40,9 @@ Follow `docs/parsing.md` for tooling, OCR, and cleanup guidance. Check off each 
 - [x] docs/pdf/protocol_vmb4ry.pdf
 - [x] docs/pdf/protocol_vmb4ryld.pdf
 - [x] docs/pdf/protocol_vmb4ryld_10.pdf
-- [ ] docs/pdf/protocol_vmb4ryld_20_vmb4ryno_20.pdf
-- [ ] docs/pdf/protocol_vmb4ryno.pdf
-- [ ] docs/pdf/protocol_vmb4ryno_10.pdf
+- [x] docs/pdf/protocol_vmb4ryld_20_vmb4ryno_20.pdf
+- [x] docs/pdf/protocol_vmb4ryno.pdf
+- [x] docs/pdf/protocol_vmb4ryno_10.pdf
 - [ ] docs/pdf/protocol_vmb6in.pdf
 - [ ] docs/pdf/protocol_vmb6pb_20.pdf
 - [ ] docs/pdf/protocol_vmb6pbn.pdf

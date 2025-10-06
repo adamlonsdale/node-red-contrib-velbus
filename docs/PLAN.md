@@ -26,9 +26,9 @@ Follow `docs/parsing.md` for tooling, OCR, and cleanup guidance. Check off each 
 - [x] docs/pdf/protocol_vmb2pbn.pdf
 - [x] docs/pdf/protocol_vmb4an.pdf
 - [x] docs/pdf/protocol_vmb4dc.pdf
-- [ ] docs/pdf/protocol_vmb4ledpwm_20.pdf
-- [ ] docs/pdf/protocol_vmb4pb.pdf
-- [ ] docs/pdf/protocol_vmb4pd.pdf
+- [x] docs/pdf/protocol_vmb4ledpwm_20.pdf
+- [x] docs/pdf/protocol_vmb4pb.pdf
+- [x] docs/pdf/protocol_vmb4pd.pdf
 - [ ] docs/pdf/protocol_vmb4pd_ir.pdf
 - [ ] docs/pdf/protocol_vmb4pd_ir_hexcodes.pdf
 - [ ] docs/pdf/protocol_vmb4rf.pdf

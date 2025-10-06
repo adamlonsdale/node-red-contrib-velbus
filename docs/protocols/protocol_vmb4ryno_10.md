@@ -6,10 +6,10 @@
 - Relay status telegram (`0xFB`) exposes disable/inhibit/force flags, live output state, LED bits, and a 24-bit countdown timer in seconds (page 3).
 - Memory map covers `0x0000–0x04FC`; no CAN FD block extensions are documented in this edition (page 4).
 
-## CAN Frame Format
+## Message Formats
 - Frames follow the Velbus CAN template `<SOF – SID10…SID0 – RTR – IDE – r0 – DLC – DATA – CRC – ACK – EOF – IFS>` with `SID10..SID9 = 00` reserved for immediate control and feedback, `11` for telemetry/configuration (page 2).
 
-## Published Frames
+## Transmitted Messages
 - **Local input feedback**: `0x00` `COMMAND_PUSH_BUTTON_STATUS` summarises local button presses, releases, and long holds alongside relay state transitions (page 2).
 - **Keypad LED control**: `0xF5` clear, `0xF6` set, `0xF7` slow blink, `0xF8` fast blink, `0xF9` very fast blink each take an LED bitmask for the linked push-button module (pages 2–3).
 - **Diagnostics & telemetry**
@@ -19,7 +19,7 @@
   - `0xFE` single-byte memory read and `0xCC` four-byte block read within `0x0000–0x04FC` (page 4).
 - **Relay naming**: `0xF0`/`0xF1`/`0xF2` broadcast name characters 1–16, padding unused slots with `0xFF` (pages 4–6).
 
-## Consumed Frames
+## Accepted Commands
 - **Relay control & timing** (pages 7–10)
   - `0x01` OFF, `0x02` ON, `0x03` start timer (`0x000000` = ignore, `0xFFFFFF` = permanent ON).
   - `0x0D` start blink timer with identical 24-bit duration semantics.

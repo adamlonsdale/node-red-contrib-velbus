@@ -5,11 +5,11 @@
 - Provides four relays with local push-button inputs; firmware ≥1105 adds force/inhibit features that override timers (pages 2 & 8).
 - Relay status telegram (`0xFB`) exposes disable/inhibit/force flags, live output, LED state, and a 24-bit active timer in seconds (page 4).
 
-## CAN Frame Format
+## Message Formats
 - Frames use the standard Velbus CAN layout `<SOF – SID10…SID0 – RTR – IDE – r0 – DLC – DATA – CRC – ACK – EOF – IFS>` (page 2).
 - Highest priority (`SID10..SID9 = 00`) is used for real-time switch feedback and relay commands; lowest priority (`11`) is used for telemetry, configuration, and memory access (pages 2–3).
 
-## Published Frames
+## Transmitted Messages
 - **Push-button & relay switch status**: `0x00` `COMMAND_PUSH_BUTTON_STATUS` indicates which local buttons were pressed/released/held and mirrors relay transitions triggered locally (page 3).
 - **LED control targeting remote keypads**: `0xF5` clear, `0xF6` set, `0xF7` slow blink, `0xF8` fast blink, `0xF9` very fast blink; each carries a single LED bitmask byte for the addressed keypad (pages 3–4).
 - **Diagnostics & telemetry**:
@@ -19,7 +19,7 @@
   - `0xFE` `COMMAND_MEMORY_DATA` and `0xCC` `COMMAND_MEMORY_DATA_BLOCK` read EEPROM/flash (`0x0000`–`0x04FC`) (page 5).
 - **Naming**: `0xF0`/`0xF1`/`0xF2` broadcast relay name characters 1–16; unused slots contain `0xFF` (pages 5–6).
 
-## Consumed Frames
+## Accepted Commands
 - **Keypad maintenance**: `0xF5` `COMMAND_CLEAR_LED` clears specific keypad LEDs to keep wall controllers in sync (page 6).
 - **Relay control and timing** (pages 6–9)
   - `0x01` OFF, `0x02` ON, `0x03` start timer (0 sets “skip”, `0xFFFFFF` forces permanent ON).

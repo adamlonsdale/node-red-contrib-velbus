@@ -5,12 +5,12 @@
 - Hex switches define the module address and per-channel timing/mode presets; module type report also returns build year and week for firmware traceability (page 5).
 - Relay status telegrams return disable/force flags, live relay state, LED states, and an active countdown encoded as a 24-bit second counter (page 5).
 
-## CAN Frame Format
+## Message Formats
 - Frames follow `<SOF – SID10…SID0 – RTR – IDE – r0 – DLC3…DLC0 – DATA – CRC15…CRC0 – CRC delimiter – ACK – EOF – inter-frame space>` (page 2).
-- Priority is encoded in `SID10..SID9`; `00` is highest priority (used for relay control), whereas `11` is lowest priority (used for telemetry and queries) (pages 2–3).
+- Priority is encoded in `SID10..SID9`; `00` is highest priority (relay control), whereas `11` is lowest priority (telemetry and queries) (pages 2–3).
 
-## Published Frames
-- **LED control towards push-button modules** (page 3)
+## Transmitted Messages
+- **LED maintenance for linked push-button modules** (page 3)
   - `0xF4` `COMMAND_UPDATE_LED`: four data bytes list LEDs that must be continuously lit, slow blink, or fast blink. Continuous-on supersedes blinking; slow + fast together produces the “very fast” blink.
   - `0xF5` `COMMAND_CLEAR_LED`, `0xF6` `COMMAND_SET_LED`, `0xF7` `COMMAND_SLOW_BLINKING_LED`, `0xF8` `COMMAND_FAST_BLINKING_LED`, `0xF9` `COMMAND_VERYFAST_BLINKING_LED`: each carries one LED bitmask byte identifying the targets (page 3).
 - **Operational telemetry** (pages 4–6)
@@ -22,7 +22,7 @@
 - **Name distribution** (page 6)
   - `0xF0`/`0xF1`/`0xF2` provide relay name characters 1–16 across three frames; unused characters are `0xFF` (page 7).
 
-## Consumed Frames
+## Accepted Commands
 - **Push-button telemetry**: `0x00` `COMMAND_PUSH_BUTTON_STATUS` delivers “just pressed/released/long pressed” bitmasks for an upstream push-button source (page 8).
 - **Relay control** (pages 8–10)
   - `0x01` `COMMAND_SWITCH_RELAY_OFF`, `0x02` `COMMAND_SWITCH_RELAY_ON` toggle a specific relay.

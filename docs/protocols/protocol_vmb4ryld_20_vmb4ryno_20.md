@@ -6,11 +6,11 @@
 - Module status telemetry exposes per-channel inhibit, forced-on, forced-off, program-disable, and interval-timer flags plus alarm/program selection bits (page 9).
 - Memory map spans `0x0000–0x07FF`; CAN FD transfers allow block reads/writes up to 60 bytes (`0xCC`/`0xCA`), with unused bytes filled with `0x55` (pages 6–8, 16).
 
-## CAN Frame Format
+## Message Formats
 - Frames follow `<SOF – SID10…SID0 – RTR – IDE – r0 – DLC – DATA – CRC – ACK – EOF – IFS>` with priority derived from `SID10..SID9`; `00` is highest (real-time controls), `11` lowest (telemetry/config) (page 2).
 - CAN FD extensions are explicitly supported for memory block transfers, returning or accepting more than four data bytes (pages 6 & 16).
 
-## Published Frames
+## Transmitted Messages
 - **Timekeeping & environment**
   - `0xD7` real-time clock status request (broadcast and addressed variants) and `0xD8` clock status response carrying weekday, hour, minute (pages 3–4).
   - `0xB7` date status with day/month/year, `0xAF` daylight-saving enable flag (pages 4–5).
@@ -27,7 +27,7 @@
   - `0xF5`–`0xF8` LED control commands for linked push-button modules (page 9).
   - `0xC1` program step info returns schedule metadata such as program reference, calendar masks, and action/channel identifiers (pages 9–11).
 
-## Consumed Frames
+## Accepted Commands
 - **Housekeeping & global controls**
   - `0xAB` power-up message acknowledges module boot; `0xB5` toggles CAN FD support (pages 12–13).
   - Clock/date management via `0xD7` request, `0xD8` set clock, `0xB7` set date, and `0xAF` enable daylight saving (pages 13–14).

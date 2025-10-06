@@ -5,11 +5,11 @@
 - Adds heavy-duty 10 A relays while retaining the local button, force, and inhibit feature set from the VMB4RYLD family (pages 2–4).
 - Relay status reports (`0xFB`) expose channel index, inhibit/force flags, relay output state, LED state, and a 24-bit active timer in seconds (page 4).
 
-## CAN Frame Format
+## Message Formats
 - Frames follow `<SOF – SID10…SID0 – RTR – IDE – r0 – DLC – DATA BYTES – CRC – ACK – EOF – IFS>` (page 2).
 - Real-time control uses highest priority (`SID10..SID9 = 00`); telemetry and configuration use lowest priority (`11`) (pages 2–3).
 
-## Published Frames
+## Transmitted Messages
 - **Local input feedback**: `0x00` `COMMAND_PUSH_BUTTON_STATUS` mirrors local push-button and relay switch transitions (`just pressed`, `just released`, `long pressed`) (page 3).
 - **Keypad LED maintenance**: `0xF5` clear, `0xF6` set, `0xF7` slow blink, `0xF8` fast blink, `0xF9` very fast blink use an LED bitmask addressed to a remote keypad (pages 3–4).
 - **Operational telemetry**:
@@ -19,7 +19,7 @@
   - `0xFE` single-byte memory read and `0xCC` four-byte block read over `0x0000`–`0x04FC` (page 5).
 - **Relay naming**: `0xF0`/`0xF1`/`0xF2` distribute up to 16 ASCII characters per channel; `0xFF` denotes unused slots (pages 5–7).
 
-## Consumed Frames
+## Accepted Commands
 - **Keypad synchronisation**: `0xF5` clear LED duplicates the outbound command so the module can honour remote requests (page 7).
 - **Relay control and overrides** (pages 7–10)
   - `0x01` OFF, `0x02` ON, `0x03` start timer (skips when timer=0; `0xFFFFFF` keeps the relay ON).
